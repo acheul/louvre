@@ -8,8 +8,28 @@ Currently It has a triangulate logic in the polygon module. What is triangulatio
    
 I widely refer to mapbox/earcut.js to implement basic logis and utilities. For further development, here the triangulate logic can handle ***self-intersecting polygons***, which is not viable in mapbox/earcut.js.
   
-Handling 3d coordinates and complex polygons with holes inside is not implemented yet. 
+Handling 3d coordinates and complex polygons with holes inside is not implemented yet.  
 
+### Visual Examples
+Belows are visual examples of drawing polygons on html canvas using triangulate after compling it into .wasm.  
+  
+*fig1. Parsing .json file:* Triangulated polygon is portrayed on the right box. 
+![fig1](./imgs/louvre_vis_ex_01.gif)  
+  
+*fig2. Drawing random (self-intersecting) polygons:*  
+![fig2](./imgs/louvre_vis_ex_02.gif)
+
+### Performance
+Average performance time required for triangulate processing per item (in milliseconds).
+||.rs|.wasm|
+|------|---|---|
+|hilbert|7.22|21.47|
+|water2|7.24|26.48|
+|inter1|0.|0.09|
+|inter2|0.|0.13|
+|inter3|0.|9.07|
+|inter4|0.|0.13|  
+  
 ### Use triangulate  
 &nbsp; (in your cargo.toml)
 ```
@@ -24,27 +44,6 @@ let new_data: Vec<f64>;
 let indices: Vec<usize>;
 (new_data, indices) = triangulate(&mut vec![-2.,0., 2.,0., 0.,2., 0.,-2.], 2);
 ```
-  
-
-### Visual Examples
-Belows are visual examples of drawing polygons on html canvas using triangulate after compling it into .wasm.  
-  
-*fig1. Parsing .json file:* Triangulated polygon is portrayed on the right box. 
-![fig1](./imgs/louvre_vis_ex_01.gif)  
-  
-*fig2. Drawing random (self-intersecting) polygons:*
-![fig1](./imgs/louvre_vis_ex_02.gif)
-
-### Performance
-Average performance time required for triangulate processing per item (in milliseconds).
-||.rs|.wasm|
-|------|---|---|
-|hilbert|7.22|21.47|
-|water2|7.24|26.48|
-|inter1|0.|0.09|
-|inter2|0.|0.13|
-|inter3|0.|9.07|
-|inter4|0.|0.13|
 
   
 ## Disclaimer
