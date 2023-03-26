@@ -6,7 +6,7 @@ This crate plans to handle computational geometry logics including processing po
 
 Currently It has a triangulate logic in the polygon module. What is triangulation? Please refer to [mapbox/earcut.js](https://github.com/mapbox/earcut).
    
-I widely refer to mapbox/earcut.js to implement basic logis and utilities. For further development, here the triangulate logic can handle ***self-intersecting polygons***, which is not viable in mapbox/earcut.js.
+I widely refered to mapbox/earcut.js to implement basic logis and utilities. Making further contribution here, our triangulate logic can handle ***self-intersecting polygons***, which is not viable in mapbox/earcut.js.
   
 Handling 3d coordinates and complex polygons with holes inside is not implemented yet.  
 
