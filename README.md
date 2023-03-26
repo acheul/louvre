@@ -2,7 +2,7 @@
   
 This crate plans to handle computational geometry logics including processing polygons, lines and points, and some basic operations.  
 
-## Triangulate *self-intersecting polygons*
+## Triangulate self-intersecting polygons
 
 Currently It has a triangulate logic in the polygon module. What is triangulation? Please refer to [mapbox/earcut.js](https://github.com/mapbox/earcut).
    
