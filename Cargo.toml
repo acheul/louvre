@@ -1,0 +1,13 @@
+[package]
+name = "louvre"
+version = "0.1.0"
+edition = "2021"
+authors = ["Acheul"]
+description = "Rust library for computational geometry: plans to include handling polygons, lines and points, and some basic operations."
+license = "MIT"
+references = "I refered to mapbox/earcut.js in https://github.com/mapbox/earcut/blob/main/src/earcut.js"
+repository = "https://github.com/acheul/louvre"
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
