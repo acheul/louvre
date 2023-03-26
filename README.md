@@ -16,7 +16,7 @@ Belows are visual examples of drawing polygons on html canvas using triangulate 
 *fig1. Parsing .json file:* Triangulated polygon is portrayed on the right box. 
 ![fig1](./imgs/louvre_vis_ex_01.gif)  
   
-*fig2. Drawing random (self-intersecting) polygons:*  
+*fig2. Triangulating random (self-intersecting) polygons:*  
 ![fig2](./imgs/louvre_vis_ex_02.gif)
 
 ### Performance
