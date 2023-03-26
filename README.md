@@ -40,9 +40,13 @@ louvre = "0.1"
 ```
 use louvre::polygon::triangulation::triangulate;
 
-let new_data: Vec<f64>;
-let indices: Vec<usize>;
-(new_data, indices) = triangulate(&mut vec![-2.,0., 2.,0., 0.,2., 0.,-2.], 2);
+fn main() {
+    let new_data: Vec<f64>;
+    let indices: Vec<usize>;
+    (new_data, indices) = triangulate(&mut vec![-2.,0., 2.,0., 0.,2., 0.,-2.], 2);
+    println!("new_data: {:?}", new_data);
+    println!("indices: {:?}", indices);
+}
 ```
 
   
