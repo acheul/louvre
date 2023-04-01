@@ -8,6 +8,8 @@ Currently It has a triangulate logic in the polygon module. What is triangulatio
    
 I widely refered to mapbox/earcut.js to implement basic logics and utilities. Making further contribution here, our triangulate logic can handle ***self-intersecting polygons***, which is not viable in mapbox/earcut.js.
   
+Triangulate logic of this crate is robust to any kind of self-intersecting polygons, including ones with redundant intersecting points. Also it is designed to be memory safe. (I used lots of unsafe raw pointers though.)
+  
 Handling 3d coordinates and complex polygons with holes inside is not implemented yet.  
 
 ### Visual Examples
@@ -51,7 +53,7 @@ fn main() {
 
   
 ## Disclaimer
-The original goal of this project was to use Rust to cover basic fundamental compuational geometry problems. The methods used here to enable triangulation of self-intersecing polygons would be quite useful for incorporating additional algoritms like boolean operations, however, at this moment further development is not tightly scheduled.  
+The original goal of this project was to use Rust to cover basic compuational geometry problems. The methods used here to enable triangulation of self-intersecing polygons would be quite useful for incorporating additional algoritms like boolean operations, however, at this moment further development is not tightly scheduled.  
   
 ## License
 MIT
