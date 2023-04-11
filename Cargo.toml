@@ -1,6 +1,6 @@
 [package]
 name = "louvre"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 authors = ["Acheul"]
 description = "Rust library for computational geometry: plans to include handling polygons, lines and points, and some basic operations."
