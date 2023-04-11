@@ -1,2 +1,2 @@
 pub mod triangulation;
-mod utils;
+pub mod utils;
