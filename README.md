@@ -8,9 +8,11 @@ Currently It has a triangulate logic in the polygon module. What is triangulatio
    
 I widely refered to mapbox/earcut.js to implement basic logics and utilities. Making further contribution here, our triangulate logic can handle ***self-intersecting polygons***, which is not viable in mapbox/earcut.js.
   
-Triangulate logic of this crate is robust to any kind of self-intersecting polygons, including ones with redundant intersecting points. Also it is designed to be memory safe. (I used lots of unsafe raw pointers though.)
+Triangulate logic of this crate is robust to any kind of self-intersecting polygons, including ones with redundant intersecting points. Also it is designed to be memory safe. (Unsafe codes were used to implement linked lists. I conducted Miri test and it's good!)
   
-Handling 3d coordinates and complex polygons with holes inside is not implemented yet.  
+Handling 3d coordinates and complex polygons with holes inside is not implemented yet.
+
+> You can interactively test it [here](https://acheul.github.io/).
 
 ### Visual Examples
 Belows are visual examples of drawing polygons on html canvas using triangulate after compling it into .wasm.  
