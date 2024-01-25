@@ -12,7 +12,7 @@ Triangulate logic of this crate is robust to any kind of self-intersecting polyg
   
 Handling 3d coordinates and complex polygons with holes inside is not implemented yet.
 
-> You can interactively test it [here](https://acheul.github.io/).
+> You can interactively test this [here](https://acheul.github.io/).
 
 ### Visual Examples
 Belows are visual examples of drawing polygons on html canvas using triangulate after compling it into .wasm.  
