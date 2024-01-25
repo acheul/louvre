@@ -1,4 +1,8 @@
-# Louvre: Computational Geometry Library with Rust  
+# Louvre: Computational Geometry Library with Rust
+
+[![Crates.io](https://img.shields.io/crates/v/louvre)](https://crates.io/crates/louvre)
+[![docs.rs](https://img.shields.io/docsrs/louvre?color=skyblue&label=docs.rs)](https://docs.rs/louvre)
+
   
 This crate plans to handle computational geometry logics including processing polygons, lines and points, and some basic operations.  
 
