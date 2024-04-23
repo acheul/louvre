@@ -7,7 +7,7 @@ description = "A Robust Triangulation Algorigthm"
 license = "MIT"
 repository = "https://github.com/acheul/louvre"
 categories = ["algorithms", "graphics", "visualization"]
-keywords = ["triangulation", "computational-geometry"]
+keywords = ["triangulation", "geometry", "polygon"]
 readme = "../README.md"
 
 [features]
