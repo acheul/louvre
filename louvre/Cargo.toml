@@ -1,0 +1,33 @@
+[package]
+name = "louvre"
+version = "0.2.0"
+edition = "2021"
+authors = ["Acheul <seoul605.21@gmail.com>"]
+description = "A Robust Triangulation Algorigthm"
+license = "MIT"
+repository = "https://github.com/acheul/louvre"
+categories = ["algorithms", "graphics", "visualization"]
+keywords = ["triangulation", "computational-geometry"]
+readme = "../README.md"
+
+[features]
+default = []
+html = ["dep:web-sys", "dep:gloo-utils", "dep:js-sys", "dep:wasm-bindgen"]
+
+[dependencies]
+gloo-utils = { version="0.2.0", optional=true }
+js-sys = { version="0.3.69", optional=true }
+wasm-bindgen = { version = "0.2.92", optional = true }
+
+
+[dependencies.web-sys]
+optional = true
+version = "0.3.69"
+features = [
+  "HtmlCanvasElement", "CanvasRenderingContext2d", "DomRect", "Element",
+  "Window", "HtmlInputElement",
+  "Event", "EventTarget", "MouseEvent", "KeyboardEvent", "InputEvent",
+]
+
+[package.metadata.docs.rs]
+all-features = true

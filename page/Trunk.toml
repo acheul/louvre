@@ -1,0 +1,3 @@
+[build]
+dist = "../docs"
+public_url = "/louvre/"
