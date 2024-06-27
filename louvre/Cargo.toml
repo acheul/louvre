@@ -9,6 +9,9 @@ repository = "https://github.com/acheul/louvre"
 categories = ["algorithms", "graphics", "visualization"]
 keywords = ["triangulation", "geometry", "polygon"]
 readme = "../README.md"
+exclude = [
+  "tests/*"
+]
 
 [features]
 default = []
