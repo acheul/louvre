@@ -5,7 +5,8 @@ members = [
   "page",
   "louvre-test",
   "bench/rust",
-  "bench/wasm"
+  "bench/wasm",
+  "draw"
 ]
 
 [profile.release]

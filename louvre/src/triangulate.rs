@@ -56,8 +56,8 @@ fn consume_array(array: &Vec<*mut Vertex>) {
 // ----- step 4. ----- //
 
 fn is_point_inside(ax:f64,ay:f64, bx:f64,by:f64, cx:f64,cy:f64, px:f64,py:f64) -> bool {
-  if ((bx-ax)*(py-by) >= (px-bx)*(by-ay)) &
-     ((cx-bx)*(py-cy) >= (px-cx)*(cy-by)) & 
+  if ((bx-ax)*(py-by) >= (px-bx)*(by-ay)) && 
+     ((cx-bx)*(py-cy) >= (px-cx)*(cy-by)) && 
      ((ax-cx)*(py-ay) >= (px-ax)*(ay-cy)) {
     true
   } else {
@@ -98,7 +98,7 @@ fn is_ear(prev: *mut Point, v: *mut Point, next: *mut Point) -> bool {
 
     let mut p: *mut Point = (*next).next;
     while (*p).i != (*prev).i {
-      if (x0<=(*p).x) & ((*p).x<=x1) & (y0<=(*p).y) & ((*p).y<=y1) {
+      if (x0<=(*p).x) && ((*p).x<=x1) && (y0<=(*p).y) && ((*p).y<=y1) {
         if is_point_inside(ax,ay, bx,by, cx,cy, (*p).x,(*p).y) {
           return false;
         }
@@ -369,7 +369,7 @@ pub fn top_turn(v: &*mut Vertex) -> bool {
     }
     while (&(*(*v))).equals(&*v_next) {
       v_next = (*v_next).next;
-      if ((*(*v)).i==(*v_next).i) | ((*v_next).i==(*v_prev).i) {
+      if ((*(*v)).i==(*v_next).i) || ((*v_next).i==(*v_prev).i) {
         break;
       }
     }
@@ -419,7 +419,7 @@ pub fn update_sects(v: &*mut Vertex) {
           }
 
           // (2) select a path among redundants/and uniqueness
-          let mut link_sects: Vec<Vec<*mut Sect>> = Vec::new(); // 중복점일 경우, 반드시 next 링크를 해줘야함(duality 고려) | For redundant points, you must make them linked next (for duality).
+          let mut link_sects: Vec<Vec<*mut Sect>> = Vec::new(); // 중복점일 경우, 반드시 next 링크를 해줘야함(duality 고려) || For redundant points, you must make them linked next (for duality).
           for ss in resects.iter_mut() {
             if ss.len()==1 {
               // non redundancy
@@ -435,7 +435,7 @@ pub fn update_sects(v: &*mut Vertex) {
                 redunsects.push(r1);
                 redunsects.push(r2);
               }
-              redunsects.push(RedunSect{ i:0, dir: true, angle: std::f64::consts::FRAC_PI_2, is_straight: true}); // Key segment 방향도 고려해야 함. | Consider the direction of the key segment. 
+              redunsects.push(RedunSect{ i:0, dir: true, angle: std::f64::consts::FRAC_PI_2, is_straight: true}); // Key segment 방향도 고려해야 함. || Consider the direction of the key segment. 
               
               // sort from smaller to larger;
               if sign {
@@ -458,7 +458,7 @@ pub fn update_sects(v: &*mut Vertex) {
               if ss.len()%2==1 {
                 sign = !sign; // update sign;
               }
-              if ! r.is_straight { // 자기 자신으로 이동하는 path의 Sect는 연결하지 않음. | Do not link the Sect if it grows straight from the key segment.
+              if ! r.is_straight { // 자기 자신으로 이동하는 path의 Sect는 연결하지 않음. || Do not link the Sect if it grows straight from the key segment.
                 let mut ss_ = vec![ss[r.i]];
                 (*(ss[r.i])).sign = sign;
                 for s in ss.iter() {
@@ -482,7 +482,7 @@ pub fn update_sects(v: &*mut Vertex) {
               ss1 = &link_sects[i];
 
               for s0 in ss0.iter() {
-                (*(*s0)).next = ss1[0]; // next 연결은 하나로만. | Link next to the one.
+                (*(*s0)).next = ss1[0]; // next 연결은 하나로만. || Link next to the one.
               }
               ss0 = ss1;
             }
@@ -517,7 +517,7 @@ pub fn update_intersect(array: &Vec<*mut Vertex>) -> bool {
             break;
           }
           // bbox check;
-          if ((*v0).left<=(*v1).right) & ((*v0).right>=(*v1).left) {
+          if ((*v0).left<=(*v1).right) && ((*v0).right>=(*v1).left) {
             // do intersect check
             if let Some((px, py, t, u)) = intersect(
               (*v0).x, (*v0).y, (*(*v0).next).x, (*(*v0).next).y,
@@ -655,7 +655,7 @@ fn fill_linked_vertex_array(order: bool, data: &mut Vec<f64>, dim: usize) -> Vec
     }
   }
 
-  // Make linked Vertices while update their bbox & topdown; also push them into a vec(let array);
+  // Make linked Vertices while update their bbox && topdown; also push them into a vec(let array);
   /* true order: [a,b, c,d, e,f] => [(a,b), (c,d), (e,f)]
      false order: [a,b, c,d, e,f] => [(e,f), (c,d), (a,b)]
    */

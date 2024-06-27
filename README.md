@@ -86,3 +86,5 @@ The original goal of this project was to use Rust to cover basic compuational ge
 * `v.0.2.0`
   * minor adjustement of module structure.
   * feature `html` added.
+* `v.0.2.1`
+  * minor interior modifications

@@ -125,7 +125,7 @@ impl Vertex<'_> {
   }
 
   pub fn equals(&self, other: &Self) -> bool {
-    if (self.x==other.x) & (self.y==other.y) {
+    if (self.x==other.x) && (self.y==other.y) {
       true
     } else {
       false
@@ -135,7 +135,7 @@ impl Vertex<'_> {
   pub fn is_adjacent(&self, other: &Self, len: usize) -> bool {
     let i = self.i;
     let j = other.i;
-    if (i==0) | (j==0) {
+    if (i==0) || (j==0) {
       if i + j == len-1 {
         return true;
       }
